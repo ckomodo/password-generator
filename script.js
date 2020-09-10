@@ -39,8 +39,15 @@ function generatePassword(){
   var specialChar = prompt("do you want any special characters?");
   console.log(specialChar);
 
-
 }
+
+//TODO: Creat generatePassword();, return final password
+//TODO: create a prompt asking the length of the password and save it to a variable
+// TODO: create a "confirm" , ask user if they want lower case chars
+// TODO: create a "confirm" , ask user if they want upper case chars
+// TODO: create a "confirm" , ask user if they want special chars
+// TODO: create a "confirm" , ask user if they want numbers chars
+
 
 
 // Add event listener to generate button
