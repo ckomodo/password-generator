@@ -1,0 +1,38 @@
+body{
+    margin-top: 20vh;
+    background-color: burlywood;
+}
+.container{
+    /* margin-top: 10vw; */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+.h1Top{
+    text-align: center;
+}
+.container{
+    background-color: snow;
+}
+
+.textArea{
+
+height: 25vh;
+width: 100%;
+display: flex;
+justify-content: center;
+word-break: break-all;
+
+
+}
+.card-header{
+    /* border: blue, 1px, solid; */
+ 
+}
+.btn{
+    background-color: red;
+    color: white;
+}
+
+.card-footer{
+    float: center;
+}
