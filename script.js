@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// var userPassword="";
 
 // Write password to the #password input
 function writePassword() {
@@ -10,32 +11,28 @@ function writePassword() {
 
 }
 
-function generatePassword(){
+function generatePassword() {
 
   var specialChar;
   var upperCase;
   var lowerCase;
   var passNum;
-  var finalArray =[]
-  var userPassword;
+  var finalArray = [];
+  var userPassword = " ";
 
-  var characterStringUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",]
-  var characterStringLower = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
-  var characterStringNum = ["0", "1","2", "3", "4", "5", "6", "7", "8", "9",]
-  var characterStringSpecial= [ "!", "@", "#", "%", "^", "&", "(", ")", "_", "-" ]
-
-    
-    
+  var characterStringUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+  var characterStringLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+  var characterStringNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",];
+  var characterStringSpecial = ["!", "@", "#", "%", "^", "&", "(", ")", "_", "-"];
 
 
 
-
-  var userCharNum =   prompt("how many characters do you want in your password?");
-  if (userCharNum<8 || userCharNum>128){
+  var userCharNum = parseInt(prompt("how many characters do you want in your password?"));
+  if (userCharNum < 8 || userCharNum > 128) {
     prompt("password must be between 8 and 128 characters in length");
-    userCharNum =   prompt("how many characters do you want in your password?");
+    userCharNum = prompt("how many characters do you want in your password?");
   }
-  else{
+  else {
     specialChar = confirm("do you want any special characters?");
     upperCase = confirm("do you want upper case letters?");
     lowerCase = confirm("do you want lower case letters?");
@@ -43,46 +40,46 @@ function generatePassword(){
   }
 
 
-   if(specialChar===false && upperCase===false && lowerCase===false && passNum===false){
-    alert ("you must select a value?");
+  if (specialChar === false && upperCase === false && lowerCase === false && passNum === false) {
+    alert("you must select a value?");
     specialChar = confirm("do you want any special characters?");
     upperCase = confirm("do you want upper case letters?");
     lowerCase = confirm("do you want lower case letters?");
-    passNum = confirm("do you want numbers?");  
-    
+    passNum = confirm("do you want numbers?");
+
   }
 
-  if(specialChar===true){
-    for(var i = 0; i<characterStringSpecial.length; i++){
+  if (specialChar === true) {
+    for (var i = 0; i < characterStringSpecial.length; i++) {
       finalArray.push(characterStringSpecial[i]);
     }
 
   }
-  console.log(finalArray);
-  if(upperCase===true){
-    for(var i = 0; i<upperCase.length; i++){
-      finalArray.push(upperCase[i]);
+  // console.log(finalArray);
+  if (upperCase === true) {
+    for (var i = 0; i < characterStringUpper.length; i++) {
+      finalArray.push(characterStringUpper[i]);
     }
 
   }
-  if(lowerCase===true){
-    for(var i = 0; i<lowerCase.length; i++){
-      finalArray.push(lowerCase[i]);
-    }
-
-  }
-
-  if(passNum===true){
-    for(var i = 0; i<passNum.length; i++){
-      finalArray.push(passNum[i]);
+  if (lowerCase === true) {
+    for (var i = 0; i < characterStringLower.length; i++) {
+      finalArray.push(characterStringLower[i]);
     }
 
   }
 
+  if (passNum === true) {
+    for (var i = 0; i < characterStringNum.length; i++) {
+      finalArray.push(characterStringNum[i]);
+    }
 
+  }
+  for (var l = 0; l < finalArray.length; l++) {
+    var userPassword = userPassword + finalArray[Math.floor(Math.random() * finalArray.length)];
+  }
 
-
-  return "Password would be here"
+  return userPassword;
 
 }
 
