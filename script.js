@@ -11,7 +11,7 @@ function writePassword() {
 
 }
 
-function generatePassword() {
+const generatePassword=()=> {
 
   var specialChar;
   var upperCase;
@@ -75,7 +75,7 @@ function generatePassword() {
     }
 
   }
-  for (var l = 0; l < finalArray.length; l++) {
+  for (var l = 0; l < userCharNum; l++) {
     var userPassword = userPassword + finalArray[Math.floor(Math.random() * finalArray.length)];
   }
 
